@@ -17,7 +17,11 @@
         <div class="dropdown">
 
           <a href="#" class="dropdown-toggle navbar-wagon-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="navbar-wagon-menu">
-            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar">
+            <% if gravatar?(current_user) %>
+              <%= image_tag avatar_url(current_user), class: "avatar" %>&nbsp;
+            <% else %>
+              <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar">&nbsp;
+            <% end %>
             <span class="navbar-wagon-link"><%= current_user.fullname %></span>
             <span class="caret"></span>
           </a>
