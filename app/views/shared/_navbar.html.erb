@@ -15,7 +15,13 @@
       <!-- Profile picture with dropdown list -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+
+          <a href="#" class="dropdown-toggle navbar-wagon-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="navbar-wagon-menu">
+            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar">
+            <span class="navbar-wagon-link"><%= current_user.fullname %></span>
+            <span class="caret"></span>
+          </a>
+
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li><a href="#">Manage Listings</a></li>
             <li><a href="#">List Your Space</a></li>
