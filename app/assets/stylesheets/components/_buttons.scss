@@ -1,0 +1,64 @@
+//BUTTONS
+.btn-block {
+  display: block;
+  white-space: normal;
+  width: 100%;
+}
+
+.btn {
+  color: #FFF;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 9px 27px;
+}
+
+.btn-small {
+  padding: 5px 15px;
+  margin-top: 15px;
+}
+
+.btn:hover, .btn:focus {
+  color: #fff;
+}
+
+.btn.btn-default {
+  width: 100%;
+  border-color: #c4c4c4;
+  background: white;
+  color: #484848;
+  border-radius: 2px;
+  padding: 10px 0;
+}
+
+.btn.btn-normal {
+  border: 1px solid $pink;
+  background-color: $pink;
+}
+
+.btn.btn-normal:active {
+  outline: none;
+  border-color: $red;
+  background-color: $red;
+}
+
+.btn.btn-form {
+  border: 1px solid $green;
+  background-color: $green;
+}
+
+.btn.btn-form:active {
+  outline: none;
+  border-color: #066165;
+  background-color: #066165;
+}
+
+.btn.btn-facebook {
+  border: 1px solid #3B5998;
+  background-color: #3B5998;
+}
+
+.btn.btn-facebook:active {
+  outline: none;
+  border-color: #2D467B;
+  background-color: #2D467B;
+}

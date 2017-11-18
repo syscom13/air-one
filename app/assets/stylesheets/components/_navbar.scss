@@ -15,6 +15,17 @@
   height: 50px;
 }
 
+.navbar-brand {
+  color: $pink;
+  font-size: 1.7em;
+  font-weight: 400;
+}
+
+.navbar-brand:hover {
+  color: $pink;
+  text-decoration: none;
+}
+
 /* User Avatar */
 .navbar-wagon .avatar {
   height: 35px;
@@ -41,7 +52,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $pink;
   text-decoration: none;
 }
 

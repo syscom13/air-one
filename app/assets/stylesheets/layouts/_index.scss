@@ -4,11 +4,4 @@
 // @import "profile";
 // @import "map";
 
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    margin: 0 0 100px; /* bottom = footer height */
-}
+@import "general";

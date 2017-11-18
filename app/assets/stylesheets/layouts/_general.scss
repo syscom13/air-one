@@ -1,0 +1,22 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 100px; /* bottom = footer height */
+    color: #565a5c;
+    background-color: #F8F8F8;
+}
+
+a {
+  color: $green;
+}
+
+.container {
+  width: 80%;
+}
+
+.text-babu, .icon-babu {
+  color: #00A699;
+}

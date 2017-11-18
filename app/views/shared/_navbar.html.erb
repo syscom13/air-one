@@ -1,6 +1,6 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
+  <a href="/" class="navbar-brand">
     AirOne
   </a>
 
@@ -8,7 +8,7 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
+      <%= link_to "Host", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
       <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
       <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
 
