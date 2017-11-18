@@ -1,26 +1,29 @@
 <br>
-<div class="row">
+<div class="container">
+  <div class="row">
 
-  <div class="col-md-3">
-    <div class="center">
-      <%= image_tag avatar_url(@user), class: "avatar-full" %>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Verification</div>
-      <div class="panel-body">
-        <ul class="sidebar-list">
-          <li>Email Address<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
-          <li>Phone Number<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
-        </ul>
+    <div class="col-md-3">
+      <div class="center">
+        <%= image_tag avatar_url(@user), class: "avatar-full" %>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">Verification</div>
+        <div class="panel-body">
+          <ul class="sidebar-list">
+            <li>Email Address<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
+            <li>Phone Number<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-md-9">
-    <h2><%= @user.fullname %></h2>
-    <div class="description row-space-3">
-      <%= @user.description %>
+    <div class="col-md-9">
+      <h2><%= @user.fullname %></h2>
+      <div class="description row-space-3">
+        <%= @user.description %>
+      </div>
     </div>
-  </div>
 
+  </div>
 </div>
+
