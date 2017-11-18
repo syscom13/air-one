@@ -1,6 +1,8 @@
-<% if notice %>
-  <p class="notice"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert"><%= alert %></p>
+<% unless flash.empty? %>
+  <script type="text/javascript">
+    <% flash.each do |key, value| %>
+      <% type = key.to_s.gsub('alert', 'error').gsub('notice', 'success') %>
+      toastr['<%= type %>']('<%= value %>')
+    <% end %>
+  </script>
 <% end %>
