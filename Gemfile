@@ -9,7 +9,8 @@ gem 'rails', '5.1.4'
 gem 'redis'
 gem 'devise'
 gem 'toastr-rails'
-gem "paperclip", "~> 5.1.0"
+gem 'paperclip', '~> 5.1.0'
+gem 'aws-sdk', '~> 2.8'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
