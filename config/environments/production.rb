@@ -112,4 +112,6 @@ Rails.application.configure do
       s3_region: 'eu-central-1'
     }
   }
+
+  config.assets.initialize_on_precompile = false
 end
