@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
       <%= link_to "Host", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
       <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+      <%= link_to  "Listings", rooms_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Profile picture with dropdown list -->
       <div class="navbar-wagon-item">
@@ -27,7 +27,7 @@
           </a>
 
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><a href="#">Manage Listings</a></li>
+            <li><%= link_to  "Manage Listings", rooms_path, class: "sidebar-link active" %></li>
             <li><%= link_to "List Your Space", new_room_path %></li>
             <li><a href="#">Your Reservations</a></li>
             <li><a href="#">Your Trips</a></li>
