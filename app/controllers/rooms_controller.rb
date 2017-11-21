@@ -59,6 +59,26 @@ class RoomsController < ApplicationController
     redirect_back(fallback_location: request.referer)
   end
 
+  # RESERVATIONS
+  def preload
+    today = Date.today
+    reservations = @room.reservations.where("start_date >= ? OR end_date >= ?", today, today)
+    render json: reservations
+    # envoi en réponse un tableau d'objets Reservation au format json : [{}, {}]
+  end
+
+  def preview
+    # binding.pry
+    start_date = Date.parse(params[:start_date])
+    end_date = Date.parse(params[:end_date])
+
+    output = {
+      conflict: conflict_found?(start_date, end_date, @room)
+    }
+
+    render json: output
+  end
+
   private
 
     def room_params
@@ -78,6 +98,11 @@ class RoomsController < ApplicationController
 
     def room_is_ready?
       !@room.active && !@room.price.blank? && !@room.listing_name.blank? && !@room.photos.blank? && !@room.address.blank?
+    end
+
+    def conflict_found?(start_date, end_date, room)
+      overlapping_reservations = room.reservations.where("? < start_date AND end_date < ?", start_date, end_date)
+      overlapping_reservations.size > 0
     end
 
 end
