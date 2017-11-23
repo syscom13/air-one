@@ -27,7 +27,7 @@
       <h4>Listings (<%= @rooms.length %>)</h4><br/>
 
       <div class="row">
-        <%= render partial: "rooms/rooms_list" %>
+        <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
       </div>
       <br/>
 

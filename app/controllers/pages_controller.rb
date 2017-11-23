@@ -32,17 +32,18 @@ class PagesController < ApplicationController
       end_date = Date.parse(params[:end_date])
 
       @arrRooms.each do |room|
-        notAvailable = room.reservations.where(
+        available = room.reservations.where(
           "(? <= start_date AND start_date <= ?)
           OR (? <= end_date AND end_date <= ?)
           OR (start_date < ? AND ? < end_date)",
           start_date, end_date,
           start_date, end_date,
           start_date, end_date
-        ).limit(1)
+        ).empty?
 
-        if notAvailable.length > 0
+        if !available
           @arrRooms.delete(room)
+          # binding.pry
         end
       end
 

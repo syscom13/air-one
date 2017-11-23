@@ -13,7 +13,7 @@
       <div class="row">
         <br>
         <div class="collapse" id="collapsePanel">
-          <%= search_form_for @search, url: search_path, remote: true do |f| %>
+          <%= search_form_for @search, url: search_path do |f| %>
             <div class="row">
               <div class="col-md-8">
                 <label>Price range:</label><br><br>
@@ -120,7 +120,7 @@
 
       <script>
         function initialize(rooms) {
-          var location = {lat: 54.5403, lng: -78.5463};
+          var location = {lat: 48.8566, lng: 2.3522};
 
           if (rooms.length > 0) {
             location = {lat: rooms[0].latitude, lng: rooms[0].longitude};
