@@ -35,6 +35,16 @@
   background-color: $pink;
 }
 
+.btn.btn-normal.btn-lg {
+  border: 1px solid $pink;
+  background-color: $pink;
+  height: 50px;
+  border-radius: 3px;
+  padding-right: 18px;
+  padding-left: 18px;
+  font-weight: 400;
+}
+
 .btn.btn-normal:active {
   outline: none;
   border-color: $red;
