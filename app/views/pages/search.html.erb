@@ -15,11 +15,15 @@
         <div class="collapse" id="collapsePanel">
           <%= search_form_for @search, url: search_path, remote: true do |f| %>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-8">
+                <label>Price range:</label><br><br>
+                <div id="slider-range"></div>
+              </div>
+              <div class="col-md-2">
                 <label>Min price:</label>
                 <%= f.text_field :price_gteq, class: "form-control" %>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-2">
                 <label>Max price:</label>
                 <%= f.text_field :price_lteq, class: "form-control" %>
               </div>
@@ -114,7 +118,6 @@
       <!-- Google Map -->
       <div id="map" style="width: 100%; height: 100%"></div>
 
-      <script src="https://maps.googleapis.com/maps/api/js"></script>
       <script>
         function initialize(rooms) {
           var location = {lat: 54.5403, lng: -78.5463};
