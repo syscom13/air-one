@@ -46,7 +46,7 @@ class PagesController < ApplicationController
           # binding.pry
         end
       end
-
     end
+
   end
 end

@@ -13,7 +13,7 @@
       <div class="row">
         <br>
         <div class="collapse" id="collapsePanel">
-          <%= search_form_for @search, url: search_path do |f| %>
+          <%= search_form_for @search, url: search_path, remote: true do |f| %>
             <div class="row">
               <div class="col-md-8">
                 <label>Price range:</label><br><br>
