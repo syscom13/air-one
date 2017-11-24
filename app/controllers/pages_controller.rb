@@ -1,6 +1,12 @@
 class PagesController < ApplicationController
   def home
     @rooms = Room.where(active: true).limit(3)
+
+    if Rails.env.production?
+      @env = "https://air-two.herokuapp.com/"
+    else
+      @env = "http://localhost:3000/"
+    end
   end
 
   def search
