@@ -16,6 +16,22 @@
   height: 50px;
 }
 
+.navbar-wagon-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  #navbar-geo {
+    width: 150%;
+  }
+}
+
+.navbar-wagon-left form button {
+  background-color: transparent;
+  border-color: transparent;
+  position: relative;
+  left: 25%;
+}
+
 .navbar-brand {
   color: $pink;
   font-size: 1.7em;
@@ -88,8 +104,17 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
-
 a:hover, a:focus {
   color: $pink;
   text-decoration: none;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #D1D2D4;
+  font-size: 14px;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #D1D2D4;
+}
+.navbar-default .navbar-nav > li > a:focus {
+  color: #D1D2D4;
 }

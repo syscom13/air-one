@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  # Air One
+
   root to: 'pages#home'
 
   devise_for :users,
@@ -31,5 +33,9 @@ Rails.application.routes.draw do
   get '/your_reservations', to: 'reservations#your_reservations'
 
   get 'search', to: 'pages#search'
+
+  # Air Two
+
+  get 'dashboard', to: 'dashboards#index'
 
 end
