@@ -39,12 +39,14 @@ class PagesController < ApplicationController
 
       @arrRooms.each do |room|
         available = room.reservations.where(
-          "(? <= start_date AND start_date <= ?)
+          "((? <= start_date AND start_date <= ?)
           OR (? <= end_date AND end_date <= ?)
-          OR (start_date < ? AND ? < end_date)",
+          OR (start_date < ? AND ? < end_date))
+          AND status = ?",
           start_date, end_date,
           start_date, end_date,
-          start_date, end_date
+          start_date, end_date,
+          1
         ).empty?
 
         if !available

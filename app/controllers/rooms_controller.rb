@@ -63,7 +63,7 @@ class RoomsController < ApplicationController
   # RESERVATIONS
   def preload
     today = Date.today
-    reservations = @room.reservations.where("start_date >= ? OR end_date >= ?", today, today)
+    reservations = @room.reservations.where("(start_date >= ? OR end_date >= ?) AND status = ?", today, today, 1)
     render json: reservations
     # envoi en réponse un tableau d'objets Reservation au format json : [{}, {}]
   end
@@ -86,7 +86,8 @@ class RoomsController < ApplicationController
       params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room,
                                    :bath_room, :listing_name, :summary, :address,
                                    :is_tv, :is_kitchen, :is_air, :is_heating,
-                                   :is_internet, :price, :active, :latitude, :longitude)
+                                   :is_internet, :price, :active, :latitude,
+                                   :longitude, :instant)
     end
 
     def find_room
@@ -102,7 +103,7 @@ class RoomsController < ApplicationController
     end
 
     def conflict_found?(start_date, end_date, room)
-      overlapping_reservations = room.reservations.where("? < start_date AND end_date < ?", start_date, end_date)
+      overlapping_reservations = room.reservations.where("(? < start_date AND end_date < ?) AND status = ?", start_date, end_date, 1)
       overlapping_reservations.size > 0
     end
 

@@ -35,6 +35,20 @@
 
             <div class="col-md-4 select">
               <div class="form-group">
+                <label>Booking Type</label>
+                <%= f.select :instant, Room.instants.map {|key,value| [key.humanize, key]},
+                              selected: 'Instant', prompt: "Select...", class: "form-control" %>
+                <!-- The map method takes an enumerable object and a block, and runs the block
+                  for each element, outputting each returned value from the block (the original object
+                  is unchanged unless you use map!)
+                  here the block is {"Request" => 0, "Instant" => 1}
+                  ex: [1, 2, 3].map { |n| n * n } #=> [1, 4, 9]
+                  so here the result is [["Request", "Request"], ["Instant", "Instant"]]-->
+              </div>
+            </div>
+
+            <div class="col-md-4 select">
+              <div class="form-group">
                 <label>Accommodate</label>
                 <%= f.select :accommodate, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
                                           id: "accommodate", prompt: "Select...",

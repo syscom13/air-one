@@ -13,7 +13,7 @@
             <% if current_user.confirmation_token %>
               <li>Email Address<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
             <% end %>
-            <% if current_user.phone_verified %>
+            <% if current_user.phone_verified == true %>
               <li>Phone Number<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
             <% end %>
           </ul>
