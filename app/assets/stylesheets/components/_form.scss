@@ -60,3 +60,12 @@
   width: 1.25em;
   color: $green;
 }
+
+.form-group input[type="radio"] {
+  height: 15px;
+  margin-right: 10px;
+}
+
+.btn-group label {
+  margin-right: 15px;
+}

@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129113953) do
+ActiveRecord::Schema.define(version: 20171201013326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "calendars", force: :cascade do |t|
+    t.date "day"
+    t.integer "price"
+    t.integer "status"
+    t.bigint "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_calendars_on_room_id"
+  end
 
   create_table "photos", force: :cascade do |t|
     t.bigint "room_id"
@@ -102,11 +112,13 @@ ActiveRecord::Schema.define(version: 20171129113953) do
     t.text "description"
     t.string "pin"
     t.boolean "phone_verified"
+    t.string "image"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "calendars", "rooms"
   add_foreign_key "photos", "rooms"
   add_foreign_key "reservations", "rooms"
   add_foreign_key "reservations", "users"
