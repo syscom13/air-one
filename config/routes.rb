@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_for :users,
              path: '',
              path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'},
-             controllers: { registrations: 'registrations' }
+             controllers: {omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations'}
 
   resources :users, only: [:show] do
     member do
@@ -53,7 +53,7 @@ Rails.application.routes.draw do
 
   get '/host_calendar' => "calendars#host"
   get '/payment_method' => "users#payment"
-  # get '/payout_method' => "users#payout"
+  get '/payout_method' => "users#payout"
   post '/add_card' => "users#add_card"
 
 end

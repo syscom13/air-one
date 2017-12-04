@@ -2,7 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable,
+         :omniauthable
 
   validates :fullname, presence: true, length: {maximum: 50}
 
@@ -28,6 +29,10 @@ class User < ApplicationRecord
 
   def verify_pin(entered_pin)
     update(phone_verified: true) if self.pin == entered_pin
+  end
+
+  def is_active_host?
+    !self.merchant_id.blank?
   end
 
 end

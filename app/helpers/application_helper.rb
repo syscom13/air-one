@@ -14,5 +14,9 @@ module ApplicationHelper
     response = http.request(request)
     response.code.to_i != 404 # from d=404 parameter
   end
+
+  def stripe_express_path
+    "https://connect.stripe.com/express/oauth/authorize?response_type=code&client_id=ca_BsROQuI7IokAh36xYkqyOUt3e0h8wIxs&scope=read_write"
+  end
 end
 

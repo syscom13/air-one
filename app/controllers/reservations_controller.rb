@@ -58,12 +58,13 @@ class ReservationsController < ApplicationController
     def charge(room, reservation)
       if !reservation.user.stripe_id.blank?
         customer = Stripe::Customer.retrieve(reservation.user.stripe_id)
-        charge = Stripe::Charge.create(
+        charge = Stripe::Charge.create({
           :customer => customer.id,
           :amount => reservation.total * 100,
           :description => room.listing_name,
-          :currency => "usd"
-        )
+          :currency => "eur"
+        })
+
         if charge
           reservation.Approved!
           flash[:notice] = "Reservation created successfully!"
