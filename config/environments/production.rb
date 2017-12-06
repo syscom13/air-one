@@ -90,6 +90,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_cable.url = "wss://air-two.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://air-two.herokuapp.com', 'http://air-two.herokuapp.com']
+
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => 'air-two.herokuapp.com' }
