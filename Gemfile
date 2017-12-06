@@ -31,6 +31,7 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem 'coffee-rails', '~> 4.2'
 
 group :development, :test do
   gem 'pry-byebug'

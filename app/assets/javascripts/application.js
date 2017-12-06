@@ -9,4 +9,5 @@
 //= require Chart.bundle
 //= require chartkick
 //= require bootstrap-sprockets
+//= require cable
 //= require_tree .
