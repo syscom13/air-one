@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redistogo:be44e75d537030b0bb4aa613ef089a9c@jack.redistogo.com:11879/
   channel_prefix: air-one_production
