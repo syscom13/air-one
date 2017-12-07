@@ -27,6 +27,11 @@
       <%= link_to  "Reservations", your_reservations_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to  "Trips", your_trips_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
+      <%= link_to notifications_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+        <i class="fa fa-bell fa-2x icon-babu"></i>
+        <span class="badge" id="navbar_num_of_unread"><%= current_user.unread if current_user.unread > 0 %></span>
+      <% end %>
+
       <!-- Profile picture with dropdown list -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
